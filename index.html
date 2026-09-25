@@ -135,8 +135,79 @@
     .blog-body hr { border: 0; height: 1px; background: var(--border-color); margin: 1.5rem 0; }
     .blog-body strong { color: #fff; }
 
-    footer { background: #05070a; padding: 2.5rem 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
+    /* --- Footer --- */
+    footer { background: #05070a; padding: 3rem 0 2rem; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
     footer a { color: var(--accent-gold); text-decoration: none; }
+
+    .footer-accreditation-img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 0 auto 1.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+    }
+    .footer-legal {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .footer-legal strong { color: var(--accent-gold); }
+
+    /* --- Banner privacy --- */
+    #privacy-banner {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      background: #0d151e;
+      border-top: 2px solid var(--accent-gold);
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
+      padding: 1.25rem 1.5rem;
+    }
+    .privacy-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem 2rem;
+    }
+    .privacy-text { flex: 1 1 420px; margin: 0; font-size: 0.85rem; line-height: 1.6; color: var(--text-muted); }
+    .privacy-text strong { color: #fff; }
+    .privacy-actions { display: flex; gap: 0.75rem; flex: 0 0 auto; margin-left: auto; }
+    .privacy-btn-accept {
+      cursor: pointer;
+      background: linear-gradient(135deg, #d4af37, #b8860b);
+      color: #000;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      padding: 0.7rem 1.8rem;
+      font-family: inherit;
+    }
+    .privacy-btn-close {
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 0.7rem 1.1rem;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    @media (max-width: 640px) {
+      .privacy-actions { margin-left: 0; width: 100%; }
+      .privacy-btn-accept { flex: 1; }
+    }
   </style>
 </head>
 <body>
@@ -230,8 +301,8 @@
       <p class="section-subtitle">Autore del Modello C.L.I.N.I.C.O.</p>
 
       <div class="card docente-box">
-        <!-- Per mostrare la foto: carica il file come images/nicola-dacomo.png nel repository.
-             Se il file non esiste, la card si ricompone automaticamente su una colonna. -->
+        <!-- La foto deve trovarsi nel repository a questo percorso: images/nicola-dacomo.png
+             Se il file manca, la card si ricompone automaticamente su una sola colonna. -->
         <img src="images/nicola-dacomo.png" alt="Nicola Dacomo, fisioterapista e autore del Modello C.L.I.N.I.C.O." class="docente-img" onerror="var b=this.closest('.docente-box'); if(b){b.classList.add('no-photo');} this.remove();">
         <div class="docente-info">
           <h3>Nicola Dacomo</h3>
@@ -336,20 +407,65 @@
 
   </main>
 
-  <footer style="background: #05070a; padding: 3rem 0 2rem; font-size: 0.85rem; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.05);">
+  <footer>
     <div class="container">
       <!-- Grafica ufficiale di accreditamento (QR + dati ECM + ente) -->
       <img src="images/footer-accreditamento.png"
            alt="Accreditamento ECM — ID Corso 225795, ID Provider 7103, 12,2 crediti. Corso accreditato da Provider Regione Lombardia n. 7103. In collaborazione con Istituto Geriatrico Carlo Louisa Grassi ONLUS, Viadana (Mantova)."
-           style="display: block; width: 100%; max-width: 900px; height: auto; margin: 0 auto 1.5rem; border: 1px solid rgba(212,175,55,0.2); border-radius: 10px;"
+           class="footer-accreditation-img"
            onerror="this.style.display='none'">
 
-      <p style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; text-align: center; font-size: 0.8rem; color: #94a3b8;">
-        &copy; 2026 <strong style="color: #d4af37;">DakPower</strong> — Tutti i diritti riservati.
-      </p>
+      <p class="footer-legal">&copy; 2026 <strong>DakPower</strong> &mdash; Tutti i diritti riservati.</p>
     </div>
   </footer>
-  
+
+  <!-- ===================== BANNER CONSENSI PRIVACY ===================== -->
+  <div id="privacy-banner" role="dialog" aria-live="polite" aria-label="Informativa privacy">
+    <div class="privacy-inner">
+      <p class="privacy-text">
+        <strong>Informativa privacy.</strong>
+        Questo sito non utilizza cookie di profilazione né strumenti di tracciamento pubblicitario.
+        I dati che ci invii (ad es. via email per l'iscrizione) sono trattati da <strong>Nicola Dacomo</strong>
+        al solo fine di gestire la tua richiesta e l'eventuale iscrizione al corso, secondo il Reg. UE 2016/679 (GDPR).
+        Proseguendo la navigazione ne prendi atto.
+        <a href="privacy.html">Leggi l'informativa completa</a>.
+      </p>
+
+      <div class="privacy-actions">
+        <button type="button" id="privacy-accept" class="privacy-btn-accept">Ho capito</button>
+        <button type="button" id="privacy-close" class="privacy-btn-close" aria-label="Chiudi il banner">&#10005;</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = 'med34_privacy_ack';
+      var banner = document.getElementById('privacy-banner');
+      if (!banner) return;
+
+      var accepted = false;
+      try { accepted = window.localStorage.getItem(STORAGE_KEY) === '1'; } catch (e) { accepted = false; }
+
+      if (!accepted) {
+        banner.style.display = 'block';
+        document.body.style.paddingBottom = banner.offsetHeight + 'px';
+      }
+
+      function dismiss() {
+        try { window.localStorage.setItem(STORAGE_KEY, '1'); } catch (e) { /* storage non disponibile */ }
+        banner.style.display = 'none';
+        document.body.style.paddingBottom = '';
+      }
+
+      var accept = document.getElementById('privacy-accept');
+      var close = document.getElementById('privacy-close');
+      if (accept) accept.addEventListener('click', dismiss);
+      if (close) close.addEventListener('click', dismiss);
+    })();
+  </script>
+
 </body>
 </html>
+
 

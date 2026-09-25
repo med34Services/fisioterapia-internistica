@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Masterclass Fisioterapia Internistica - 21 Novembre 2026 Milano</title>
   <meta name="description" content="Corso Introduttivo in Fisioterapia Internistica: Valutazione, ragionamento clinico e gestione delle disfunzioni internistiche nei quadri clinici complessi. 12.2 Crediti ECM.">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -83,7 +83,8 @@
     @media (max-width: 768px) { .mod-time { text-align: left; } }
 
     .docente-box { display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: center; }
-    @media (max-width: 768px) { .docente-box { grid-template-columns: 1fr; text-align: center; } }
+    .docente-box.no-photo { grid-template-columns: 1fr; max-width: 780px; margin: 0 auto; }
+    @media (max-width: 768px) { .docente-box, .docente-box.no-photo { grid-template-columns: 1fr; text-align: center; } }
     .docente-img { width: 100%; border-radius: 12px; border: 2px solid var(--accent-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: cover; }
     .docente-info h3 { font-size: 1.6rem; color: #fff; margin-bottom: 0.3rem; }
     .docente-role { color: var(--accent-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 1rem; }
@@ -105,7 +106,7 @@
     .price-old { text-decoration: line-through; color: var(--text-muted); font-size: 1.2rem; margin-right: 1rem; }
     .price-new { font-size: 2.5rem; color: var(--accent-gold); font-weight: 700; }
     .price-note { display: block; color: var(--accent-cyan); font-size: 0.85rem; margin-top: 0.3rem; }
-    
+
     .btn-gold {
       display: inline-block;
       background: linear-gradient(135deg, #d4af37, #b8860b);
@@ -123,15 +124,20 @@
     .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5); }
 
     .blog-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
-    .blog-body h3 { color: var(--accent-gold); margin: 1.5rem 0 0.5rem 0; }
-    .blog-body ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+    .blog-title { font-family: var(--font-title); font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 0.5rem; line-height: 1.3; }
+    .blog-date { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .blog-description { font-weight: 600; color: #fff; margin-bottom: 1.2rem; }
+    .blog-body { border-top: 1px solid var(--border-color); padding-top: 1.25rem; }
+    .blog-body h3 { color: var(--accent-gold); font-size: 1.15rem; margin: 1.5rem 0 0.5rem 0; }
+    .blog-body p { margin-bottom: 1rem; }
+    .blog-body ul { margin: 0 0 1rem 1.5rem; }
+    .blog-body li { margin-bottom: 0.4rem; }
+    .blog-body hr { border: 0; height: 1px; background: var(--border-color); margin: 1.5rem 0; }
+    .blog-body strong { color: #fff; }
 
     footer { background: #05070a; padding: 2.5rem 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
     footer a { color: var(--accent-gold); text-decoration: none; }
   </style>
-
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
@@ -140,7 +146,7 @@
       <p class="hero-subtitle">Corso ECM Introduttivo — Un percorso per una nuova visione</p>
       <h1>FISIOTERAPIA INTERNISTICA</h1>
       <p class="hero-tagline">“Vedere ciò che altri non vedono.”</p>
-      
+
       <div class="badge-container">
         <span class="badge badge-ecm">12.2 Crediti ECM</span>
         <span class="badge">21 Novembre 2026 — Milano</span>
@@ -155,7 +161,7 @@
     <section>
       <h2 class="section-title">Presentazione del Corso</h2>
       <p class="section-subtitle">Oltre il sintomo muscoloscheletrico: l'approccio sistemico</p>
-      
+
       <div class="grid-2">
         <div>
           <p style="margin-bottom: 1rem;">Il paziente che il fisioterapista incontra ogni giorno è sempre più complesso: anziani fragili, persone con patologie cardiovascolari, metaboliche, autoimmuni, oncologiche e sindromi da fatica come Long COVID e ME-CFS.</p>
@@ -224,7 +230,9 @@
       <p class="section-subtitle">Autore del Modello C.L.I.N.I.C.O.</p>
 
       <div class="card docente-box">
-        <img src="./Nicola%20Dacomo%202026%20definitiva.png" alt="Nicola Dacomo" class="docente-img">
+        <!-- Per mostrare la foto: carica il file come images/nicola-dacomo.png nel repository.
+             Se il file non esiste, la card si ricompone automaticamente su una colonna. -->
+        <img src="images/nicola-dacomo.png" alt="Nicola Dacomo, fisioterapista e autore del Modello C.L.I.N.I.C.O." class="docente-img" onerror="var b=this.closest('.docente-box'); if(b){b.classList.add('no-photo');} this.remove();">
         <div class="docente-info">
           <h3>Nicola Dacomo</h3>
           <p class="docente-role">Fisioterapista, Terapista della Riabilitazione, Consulente Tecnico Scientifico per Dispositivi Medici</p>
@@ -255,11 +263,62 @@
     </section>
 
     <section id="approfondimenti">
-      <h2 class="section-title">Approfondimenti dal CMS</h2>
-      <p class="section-subtitle">Articoli e materiale integrativo aggiornato dal docente</p>
-      <div id="blog-posts-container">
-        <p style="text-align:center; color: var(--text-muted);">Caricamento contenuti in corso...</p>
-      </div>
+      <h2 class="section-title">Approfondimenti</h2>
+      <p class="section-subtitle">Materiale integrativo a cura del docente</p>
+
+      <article class="blog-card">
+        <h3 class="blog-title">Programma e Abstract: Masterclass Fisioterapia Internistica</h3>
+        <span class="blog-date">Pubblicato il 25 settembre 2026</span>
+        <p class="blog-description">Presentazione dettagliata dei 4 moduli formativi della Masterclass in Fisioterapia Internistica: dal ragionamento clinico col modello C.L.I.N.I.C.O. alla diagnostica funzionale e alle applicazioni specialistiche.</p>
+
+        <div class="blog-body">
+          <p>Il programma del corso di Fisioterapia Internistica propone un percorso formativo avanzato strutturato per ampliare la visione clinica del fisioterapista, evolvendo dal tradizionale approccio focalizzato sull'apparato muscoloscheletrico verso una presa in carico sistemica e complessa del paziente.</p>
+
+          <hr>
+
+          <h3>Modulo 1 — Inquadramento Professionale e Integrazione Clinica</h3>
+          <p>Il percorso si apre definendo il ruolo del fisioterapista all'interno dell'area medica internistica. Partendo dalle competenze tradizionali legate al core muscoloscheletrico, il modulo guida i partecipanti verso il passaggio dalla riabilitazione focalizzata sul singolo organo a una presa in carico sistemica.</p>
+          <p>Vengono affrontati gli aspetti cruciali della diagnosi differenziale e l'individuazione dei segnali d'allarme (<strong>red flags</strong>), fondamentali per riconoscere quando un sintomo apparentemente muscoloscheletrico nasconde in realtà una patologia di pertinenza internistica. L'area si completa con l'analisi dei modelli di collaborazione interprofessionale e la costruzione di percorsi clinici condivisi con l'équipe medica e sanitaria.</p>
+
+          <hr>
+
+          <h3>Modulo 2 — Metodologia e Ragionamento Clinico: Il Modello C.L.I.N.I.C.O.</h3>
+          <p>Il secondo modulo affronta la complessità della clinica contemporanea proponendo un cambio di paradigma: superare la semplice raccolta dati per identificare pattern specifici e definire il fenotipo funzionale del paziente.</p>
+          <p>Questa metodologia si struttura sul <strong>Modello C.L.I.N.I.C.O.</strong>, un'architettura valutativa a cinque livelli che analizza:</p>
+          <ul>
+            <li><strong>C</strong> — Le alterazioni primarie</li>
+            <li><strong>L</strong> — I processi regolativi</li>
+            <li><strong>I</strong> — Gli effetti funzionali</li>
+            <li><strong>N</strong> — La traiettoria predittiva</li>
+            <li><strong>I/C/O</strong> — I marker per il follow-up</li>
+          </ul>
+          <p>Vengono inoltre analizzati i meccanismi di gestione dei bias cognitivi più comuni (come l'ancoraggio diagnostico e la chiusura prematura) e viene approfondita la definizione e il valore predittivo del fenotipo ipoadattativo.</p>
+
+          <hr>
+
+          <h3>Modulo 3 — Diagnostica Funzionale Strumentale e Fisiopatologia del Microcircolo</h3>
+          <p>La terza sezione unisce teoria e pratica per esplorare le metodologie di valutazione strumentale non invasiva:</p>
+          <ul>
+            <li><strong>Heart Rate Variability (HRV)</strong>: per la valutazione del sistema nervoso autonomo e della capacità di adattamento sistemico, con focus sugli errori di interpretazione più frequenti.</li>
+            <li><strong>Fotopletismografia (PPG)</strong>: per lo studio della perfusione periferica.</li>
+            <li><strong>Composizione Corporea</strong>: valutazione della sarcopenia sistemica e applicazioni del biofeedback.</li>
+          </ul>
+          <p>Un'attenzione centrale è riservata al <strong>microcircolo</strong> inteso come vero e proprio organo funzionale, analizzando le dinamiche dell'endotelio, del glicocalice, della vasomozione, dell'unità neurovascolare e della conducibilità tessutale dell'interstizio. Il modulo si conclude con una sessione dimostrativa pratica di misurazione HRV e PPG dal vivo su volontari.</p>
+
+          <hr>
+
+          <h3>Modulo 4 — Agenti Fisici, Applicazioni Specialistiche e Casi Clinici</h3>
+          <p>L'ultimo modulo definisce il razionale terapeutico e l'applicazione delle tecnologie fisiche (diatermia capacitiva/resistiva, campi elettromagnetici pulsati - PEMF, onde d'urto a bassa intensità - Li-ESWT e neuroregolazione) con particolare riferimento agli effetti sul microcircolo.</p>
+          <p>Le applicazioni cliniche vengono declinate per specifici ambiti internistici:</p>
+          <ul>
+            <li><strong>Cardio-respiratorio</strong>: gestione del Long COVID e della sindrome da fatica cronica (ME/CFS).</li>
+            <li><strong>Gastroenterico</strong>: malattie infiammatorie croniche intestinali (IBD), steatosi epatica (NAFLD/MASLD) e interazioni dell'asse intestino-fegato-vascolare.</li>
+            <li><strong>Nefrologico, Endocrino-Metabolico e Oncologico Integrato</strong>.</li>
+            <li><strong>Dolore cronico e Fibromialgia</strong>.</li>
+          </ul>
+          <p>Il corso si chiude con la presentazione e la discussione di casi clinici complessi, l'analisi delle indicazioni e controindicazioni, e una valutazione critica dei limiti e dello stato attuale delle evidenze scientifiche.</p>
+        </div>
+      </article>
     </section>
 
     <div class="cta-box">
@@ -279,70 +338,11 @@
 
   <footer>
     <div class="container">
-      <p style="margin-bottom: 0.5rem;"><strong>ID Corso ECM:</strong> 225795 | <strong>ID Provider ECM:</strong> 7103 (F&S s.r.l.) | <strong>Crediti:</strong> 12,2</p>
-      <p>&copy; 2026 med34 Services — In collaborazione con l'<em>Istituto Geriatrico Carlo Louisa Grassi ONLUS</em> | <a href="/admin/">Area Riservata (CMS)</a></p>
+      <p style="margin-bottom: 0.5rem;"><strong>ID Corso ECM:</strong> 225795 | <strong>ID Provider ECM:</strong> 7103 (F&amp;S s.r.l.) | <strong>Crediti:</strong> 12,2</p>
+      <p>&copy; 2026 med34 Services — In collaborazione con l'<em>Istituto Geriatrico Carlo Louisa Grassi ONLUS</em></p>
     </div>
   </footer>
 
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-
-    async function loadBlogPosts() {
-      const container = document.getElementById('blog-posts-container');
-      try {
-        const filename = "2026-09-25-programma-e-abstract-masterclass-fisioterapia-internistica.md";
-        // Uso percorso relativo per compatibilità con GitHub Pages
-        const response = await fetch(`./blog/${filename}`);
-        
-        if (!response.ok) {
-          container.innerHTML = '<p style="text-align:center; color: var(--text-muted);">Nessun approfondimento integrativo al momento.</p>';
-          return;
-        }
-
-        const text = await response.text();
-        
-        const titleMatch = text.match(/title:\s*"(.*?)"/);
-        const dateMatch = text.match(/date:\s*(.*)/);
-        const descMatch = text.match(/description:\s*"(.*?)"/);
-        
-        const bodyMarkdown = text.replace(/---[\s\S]*?---/, '').trim();
-        
-        const bodyHTML = marked.parse(bodyMarkdown);
-        
-        const title = titleMatch ? titleMatch[1] : 'Approfondimento';
-        const date = dateMatch ? new Date(dateMatch[1]).toLocaleDateString('it-IT') : '';
-        const desc = descMatch ? descMatch[1] : '';
-
-        container.innerHTML = `
-          <article class="blog-card">
-            <h3 style="font-size: 1.4rem; color: var(--accent-gold); margin-bottom: 0.5rem;">${title}</h3>
-            ${date ? `<span style="font-size: 0.85rem; color: var(--text-muted); display:block; margin-bottom: 0.8rem;">Pubblicato il ${date}</span>` : ''}
-            ${desc ? `<p style="margin-bottom: 1.2rem; font-weight: 600; color: #fff;">${desc}</p>` : ''}
-            <div class="blog-body" style="border-top: 1px solid var(--border-color); padding-top: 1rem; line-height: 1.7;">
-              ${bodyHTML}
-            </div>
-          </article>
-        `;
-      } catch (err) {
-        console.error(err);
-        container.innerHTML = '<p style="text-align:center; color: var(--text-muted);">Impossibile caricare gli approfondimenti al momento.</p>';
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', loadBlogPosts);
-  </script>
 </body>
 </html>
 
-    document.addEventListener('DOMContentLoaded', loadBlogPosts);
-  </script>
-</body>
-</html>

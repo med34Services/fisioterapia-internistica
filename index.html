@@ -113,41 +113,46 @@
       });
     }
 
+    // Il CMS a volte salva i simboli Markdown con l'escape (es. "\### Titolo"): li ripristiniamo
+    // prima di passare il testo a Marked, altrimenti verrebbero mostrati come testo grezzo.
+    function unescapeMarkdown(markdown) {
+      return markdown.replace(/\\([#*_\-`>~+.!\[\]()])/g, '$1');
+    }
+
+    function renderPost(post) {
+      const date = post.date ? new Date(post.date).toLocaleDateString('it-IT') : '';
+      const bodyHTML = marked.parse(unescapeMarkdown(post.body || ''));
+
+      return `
+        <article class="blog-card">
+          <h3 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 0.5rem;">${post.title || 'Approfondimento'}</h3>
+          ${date ? `<span class="blog-date">Pubblicato il ${date}</span>` : ''}
+          ${post.description ? `<p style="margin-bottom: 1.2rem; font-weight: 600; color: #333;">${post.description}</p>` : ''}
+          <div class="blog-body" style="border-top: 1px solid #f0f0f0; padding-top: 1rem; line-height: 1.7;">
+            ${bodyHTML}
+          </div>
+        </article>
+      `;
+    }
+
     async function loadBlogPosts() {
       const container = document.getElementById('blog-posts-container');
       try {
-        const filename = "2026-09-25-programma-e-abstract-masterclass-fisioterapia-internistica.md";
-        const response = await fetch(`/blog/${filename}`);
-        
+        const response = await fetch('/api/blog-posts');
+
         if (!response.ok) {
+          container.innerHTML = '<p>Impossibile caricare gli approfondimenti al momento.</p>';
+          return;
+        }
+
+        const posts = await response.json();
+
+        if (!posts.length) {
           container.innerHTML = '<p>Nessun approfondimento pubblicato al momento.</p>';
           return;
         }
 
-        const text = await response.text();
-        
-        const titleMatch = text.match(/title:\s*"(.*?)"/);
-        const dateMatch = text.match(/date:\s*(.*)/);
-        const descMatch = text.match(/description:\s*"(.*?)"/);
-        
-        // Estrae il testo e lo converte da Markdown ad HTML pulito
-        const bodyMarkdown = text.replace(/---[\s\S]*?---/, '').trim();
-        const bodyHTML = marked.parse(bodyMarkdown);
-        
-        const title = titleMatch ? titleMatch[1] : 'Approfondimento';
-        const date = dateMatch ? new Date(dateMatch[1]).toLocaleDateString('it-IT') : '';
-        const desc = descMatch ? descMatch[1] : '';
-
-        container.innerHTML = `
-          <article class="blog-card">
-            <h3 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 0.5rem;">${title}</h3>
-            ${date ? `<span class="blog-date">Pubblicato il ${date}</span>` : ''}
-            ${desc ? `<p style="margin-bottom: 1.2rem; font-weight: 600; color: #333;">${desc}</p>` : ''}
-            <div class="blog-body" style="border-top: 1px solid #f0f0f0; padding-top: 1rem; line-height: 1.7;">
-              ${bodyHTML}
-            </div>
-          </article>
-        `;
+        container.innerHTML = posts.map(renderPost).join('');
       } catch (err) {
         console.error(err);
         container.innerHTML = '<p>Impossibile caricare gli approfondimenti al momento.</p>';

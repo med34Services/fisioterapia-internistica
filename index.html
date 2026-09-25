@@ -3,105 +3,311 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Masterclass Fisioterapia Internistica - 21 Novembre 2026</title>
-  <meta name="description" content="Masterclass Fisioterapia Internistica: Valutazione e gestione delle disfunzioni internistiche nei quadri clinici complessi. 12.2 Crediti ECM.">
+  <title>Masterclass Fisioterapia Internistica - 21 Novembre 2026 Milano</title>
+  <meta name="description" content="Corso Introduttivo in Fisioterapia Internistica: Valutazione, ragionamento clinico e gestione delle disfunzioni internistiche nei quadri clinici complessi. 12.2 Crediti ECM.">
+  
+  <!-- Font Google per stile Dark Luxury High-Tech -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --primary: #004d40;
-      --secondary: #00796b;
-      --accent: #d81b60;
-      --light: #f4fbf9;
-      --dark: #1a252c;
-      --gray: #616161;
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --bg-dark: #0a0d12;
+      --bg-card: #121820;
+      --bg-card-hover: #18222d;
+      --accent-gold: #d4af37;
+      --accent-gold-light: #f3e5ab;
+      --accent-cyan: #00d2ff;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --border-color: rgba(212, 175, 55, 0.2);
+      --font-title: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-main); color: var(--dark); line-height: 1.6; background-color: #fff; }
-    header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; padding: 3rem 1.5rem; text-align: center; }
-    header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
-    header p { font-size: 1.1rem; opacity: 0.95; max-width: 800px; margin: 0 auto; }
-    .badge-container { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
-    .badge { background: rgba(255,255,255,0.15); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
-    .badge-ecm { background: var(--accent); color: #fff; }
-    main { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; }
-    section { margin-bottom: 3rem; }
-    h2 { color: var(--primary); font-size: 1.6rem; margin-bottom: 1rem; border-bottom: 2px solid var(--light); padding-bottom: 0.5rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .card { background: var(--light); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary); }
-    .card h3 { color: var(--primary); margin-bottom: 0.5rem; }
-    .blog-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    .blog-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
-    .blog-date { font-size: 0.85rem; color: var(--gray); margin-bottom: 0.8rem; display: block; }
-    .blog-body h3 { color: var(--secondary); font-size: 1.25rem; margin: 1.5rem 0 0.5rem 0; font-weight: bold; }
-    .blog-body p { margin-bottom: 1rem; }
-    .blog-body ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
-    .blog-body hr { border: 0; height: 1px; background: #e0e0e0; margin: 1.5rem 0; }
-    .cta-box { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: #fff; text-align: center; padding: 2.5rem; border-radius: 12px; margin: 3rem 0; }
-    .btn { display: inline-block; background: var(--accent); color: #fff; padding: 0.9rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
-    footer { background: var(--dark); color: #aaa; padding: 2rem 1.5rem; font-size: 0.85rem; text-align: center; }
-    footer a { color: #fff; text-decoration: underline; }
+    body { font-family: var(--font-body); color: var(--text-main); background-color: var(--bg-dark); line-height: 1.7; overflow-x: hidden; }
+
+    /* Layout & Container */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Hero Section */
+    header.hero {
+      position: relative;
+      background: radial-gradient(circle at 50% 20%, #172433 0%, var(--bg-dark) 70%);
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+    }
+    .hero-subtitle { color: var(--accent-gold); text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem; }
+    .hero h1 { font-family: var(--font-title); font-size: 2.8rem; color: #fff; letter-spacing: 1px; margin-bottom: 0.8rem; line-height: 1.2; }
+    .hero-tagline { font-size: 1.25rem; font-style: italic; color: var(--accent-gold-light); margin-bottom: 2rem; opacity: 0.9; }
+
+    /* Badges Bar */
+    .badge-container { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .badge { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); padding: 0.5rem 1rem; border-radius: 30px; font-size: 0.85rem; font-weight: 500; color: #fff; }
+    .badge-ecm { background: linear-gradient(135deg, #b8860b, #d4af37); color: #000; font-weight: 700; border: none; }
+
+    /* Sections General */
+    section { padding: 4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .section-title { font-family: var(--font-title); font-size: 1.8rem; color: #fff; margin-bottom: 0.5rem; text-align: center; }
+    .section-subtitle { text-align: center; color: var(--accent-gold); font-size: 0.95rem; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 1.5px; }
+
+    /* Grid Layouts */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    .card:hover { background: var(--bg-card-hover); border-color: var(--accent-gold); transform: translateY(-3px); }
+    .card h3 { color: var(--accent-gold); margin-bottom: 1rem; font-size: 1.25rem; }
+
+    /* Program Section (Locandina Style) */
+    .program-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .program-item {
+      display: grid;
+      grid-template-columns: 80px 1fr 140px;
+      gap: 1.5rem;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-left: 4px solid var(--accent-gold);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+      .program-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+    .mod-num { font-family: var(--font-title); font-size: 2.2rem; color: var(--accent-gold); font-weight: 700; line-height: 1; }
+    .mod-content h4 { color: #fff; font-size: 1.15rem; margin-bottom: 0.3rem; }
+    .mod-content p { color: var(--text-muted); font-size: 0.9rem; }
+    .mod-time { color: var(--accent-cyan); font-size: 0.85rem; font-weight: 600; text-align: right; }
+    @media (max-width: 768px) { .mod-time { text-align: left; } }
+
+    /* Docente Section */
+    .docente-box { display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: center; }
+    @media (max-width: 768px) { .docente-box { grid-template-columns: 1fr; text-align: center; } }
+    .docente-img { width: 100%; border-radius: 12px; border: 2px solid var(--accent-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: cover; }
+    .docente-info h3 { font-size: 1.6rem; color: #fff; margin-bottom: 0.3rem; }
+    .docente-role { color: var(--accent-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 1rem; }
+
+    /* Feature List */
+    .feature-list { list-style: none; }
+    .feature-list li { position: relative; padding-left: 1.8rem; margin-bottom: 0.8rem; color: var(--text-main); }
+    .feature-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-gold); font-weight: bold; }
+
+    /* Pricing & Call to Action Box */
+    .cta-box {
+      background: linear-gradient(135deg, #16222f 0%, #0d151e 100%);
+      border: 2px solid var(--accent-gold);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 4rem 0;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+    .price-container { margin: 1.5rem 0; }
+    .price-old { text-decoration: line-through; color: var(--text-muted); font-size: 1.2rem; margin-right: 1rem; }
+    .price-new { font-size: 2.5rem; color: var(--accent-gold); font-weight: 700; }
+    .price-note { display: block; color: var(--accent-cyan); font-size: 0.85rem; margin-top: 0.3rem; }
+    
+    .btn-gold {
+      display: inline-block;
+      background: linear-gradient(135deg, #d4af37, #b8860b);
+      color: #000;
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5); }
+
+    /* Decap CMS Render Section */
+    .blog-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
+    .blog-body h3 { color: var(--accent-gold); margin: 1.5rem 0 0.5rem 0; }
+    .blog-body ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+
+    /* Footer */
+    footer { background: #05070a; padding: 2.5rem 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
+    footer a { color: var(--accent-gold); text-decoration: none; }
   </style>
+
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <!-- Libreria che converte i simboli Markdown in HTML grafico -->
+  <!-- Parser Marked.js -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
-  <header>
-    <h1>Masterclass: Fisioterapia Internistica</h1>
-    <p>Valutazione e gestione delle disfunzioni internistiche nei quadri clinici complessi</p>
-    <div class="badge-container">
-      <span class="badge badge-ecm">12.2 Crediti ECM</span>
-      <span class="badge">21 Novembre 2026</span>
-      <span class="badge">Formato Blended (4h Live + 7h FAD)</span>
-      <span class="badge">Libro di testo incluso</span>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="container">
+      <p class="hero-subtitle">Corso ECM Introduttivo — Un percorso per una nuova visione</p>
+      <h1>FISIOTERAPIA INTERNISTICA</h1>
+      <p class="hero-tagline">“Vedere ciò che altri non vedono.”</p>
+      
+      <div class="badge-container">
+        <span class="badge badge-ecm">12.2 Crediti ECM</span>
+        <span class="badge">21 Novembre 2026 — Milano</span>
+        <span class="badge">Formato Blended (Live + FAD)</span>
+        <span class="badge">Libro di Testo Incluso</span>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Presentazione del Corso</h2>
-      <p>La Masterclass fornisce strumenti operativi e teorici per l'inquadramento e la gestione fisioterapica dei pazienti con patologie o disfunzioni internistiche complesse. Il corso si articola in una sessione sincrona in presenza/online e un modulo FAD asincrono di approfondimento.</p>
-    </section>
+  <main class="container">
 
-    <section id="approfondimenti">
-      <h2>Approfondimenti e Programma Didattico</h2>
-      <div id="blog-posts-container">
-        <p style="color: var(--gray);">Caricamento approfondimenti in corso...</p>
+    <!-- PRESENTAZIONE & OBIETTIVI -->
+    <section>
+      <h2 class="section-title">Presentazione del Corso</h2>
+      <p class="section-subtitle">Oltre il sintomo muscoloscheletrico: l'approccio sistemico</p>
+      
+      <div class="grid-2">
+        <div>
+          <p style="margin-bottom: 1rem;">Il paziente che il fisioterapista incontra ogni giorno è sempre più complesso: anziani fragili, persone con patologie cardiovascolari, metaboliche, autoimmuni, oncologiche e sindromi da fatica come Long COVID e ME-CFS.</p>
+          <p style="margin-bottom: 1rem;">In questi quadri il sintomo muscoloscheletrico è spesso solo la punta dell’iceberg: una manifestazione visibile di un'alterazione sistemica della regolazione autonomica, del microcircolo e del terreno metabolico.</p>
+          <p>Il corso nasce per colmare il divario universitario e contestualizzare la Rieducazione Funzionale in tutte le specialità mediche, valorizzando strumenti diagnostico-funzionali e terapeutici consolidati.</p>
+        </div>
+        <div class="card">
+          <h3>Cosa Imparerai (Obiettivi Clinici)</h3>
+          <ul class="feature-list">
+            <li>Inquadrare le <strong>red flags internistiche</strong> nel paziente complesso.</li>
+            <li>Applicare il <strong>Modello C.L.I.N.I.C.O.</strong> sui 5 layer di lettura.</li>
+            <li>Utilizzare la diagnostica strumentale non invasiva (<strong>HRV e PPG</strong>).</li>
+            <li>Comprendere il <strong>microcircolo</strong> come organo funzionale.</li>
+            <li>Selezionare gli agenti fisici appropriati (diatermia, PEMF, neuroregolazione).</li>
+            <li>Costruire un piano di monitoraggio con marker funzionali ripetibili.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
+    <!-- PROGRAMMA DIDATTICO (LOCANDINA STYLE) -->
     <section>
-      <h2>Dettagli Evento e Accreditamento ECM</h2>
-      <div class="grid">
+      <h2 class="section-title">Programma Didattico</h2>
+      <p class="section-subtitle">Struttura della giornata residenziale a Milano</p>
+
+      <div class="program-list">
+        <div class="program-item">
+          <div class="mod-num">01</div>
+          <div class="mod-content">
+            <h4>Inquadramento Professionale e Integrazione Clinica</h4>
+            <p>Il profilo professionale oltre il muscoloscheletrico; la riabilitazione nelle specialità mediche; diagnosi differenziale, red flags internistiche e collaborazione interprofessionale.</p>
+          </div>
+          <div class="mod-time">09:30 – 10:45</div>
+        </div>
+
+        <div class="program-item">
+          <div class="mod-num">02</div>
+          <div class="mod-content">
+            <h4>Metodologia e Ragionamento Clinico</h4>
+            <p>Il Modello C.L.I.N.I.C.O.: i cinque layer di lettura (alterazioni primarie, processi regolativi, effetti funzionali, traiettoria predittiva, marker di follow-up); bias cognitivi e fenotipo ipoadattativo.</p>
+          </div>
+          <div class="mod-time">11:00 – 12:15</div>
+        </div>
+
+        <div class="program-item">
+          <div class="mod-num">03</div>
+          <div class="mod-content">
+            <h4>Diagnostica Funzionale e Microcircolo</h4>
+            <p>HRV e sistema nervoso autonomo; fotopletismografia (PPG); composizione corporea e sarcopenia sistemica; il microcircolo come organo funzionale. Con dimostrazione pratica dal vivo.</p>
+          </div>
+          <div class="mod-time">12:15 – 13:15</div>
+        </div>
+
+        <div class="program-item">
+          <div class="mod-num">04</div>
+          <div class="mod-content">
+            <h4>Agenti Fisici e Applicazioni Specialistiche</h4>
+            <p>Diatermia capacitiva/resistiva, PEMF, Li-ESWT, neuroregolazione; applicazioni per specialità (cardio-respiratorio, Long COVID, gastroenterico, oncologia integrata, fibromialgia); casi clinici.</p>
+          </div>
+          <div class="mod-time">13:15 – 14:15</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCENTE -->
+    <section>
+      <h2 class="section-title">Docente del Corso</h2>
+      <p class="section-subtitle">Autore del Modello C.L.I.N.I.C.O.</p>
+
+      <div class="card docente-box">
+        <img src="https://raw.githubusercontent.com/med34Services/fisioterapia-internistica/main/Nicola%20Dacomo%202026%20definitiva.png" alt="Nicola Dacomo" class="docente-img">
+        <div class="docente-info">
+          <h3>Nicola Dacomo</h3>
+          <p class="docente-role">Fisioterapista, Terapista della Riabilitazione, Consulente Tecnico Scientifico per Dispositivi Medici</p>
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">Autore del <i>Modello C.L.I.N.I.C.O. (3ª edizione)</i> e della collana di volumi sulla microcircolazione. Ha dedicato la propria attività clinica e didattica alla diagnostica funzionale e alle terapie fisiche sul microcircolo, sviluppando un modello applicabile in tutte le specialità mediche.</p>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">Relatore di corsi di Diagnostica Funzionale e autore di lavori su diatermia, neuroregolazione e riabilitazione nelle sindromi da fatica (Long COVID, ME-CFS, fibromialgia).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATERIALE INCLUSO E DESTINATARI -->
+    <section>
+      <div class="grid-2">
         <div class="card">
-          <h3>Informazioni Generali</h3>
-          <ul>
-            <li><strong>Data Evento Live:</strong> 21 Novembre 2026</li>
-            <li><strong>Crediti ECM:</strong> 12.2 crediti</li>
-            <li><strong>ID Evento:</strong> 225795</li>
-            <li><strong>Provider:</strong> F&S s.r.l.</li>
-            <li><strong>Destinatari:</strong> Fisioterapisti, Medici Chirurghi</li>
+          <h3>Materiale Incluso nella Quota</h3>
+          <ul class="feature-list">
+            <li><strong>Libro di testo:</strong> “Modello C.L.I.N.I.C.O.” di N. Dacomo (3ª Edizione).</li>
+            <li>Dispense e slide digitali dei 4 moduli.</li>
+            <li>Attestato dei <strong>12.2 Crediti ECM</strong> (al superamento del test).</li>
+            <li>Accesso alla sessione di Networking SIFI.</li>
+            <li>Schede di valutazione e casi clinici riutilizzabili.</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Materiale Didattico Incluso</h3>
-          <p>Tutti i partecipanti riceveranno il manuale ufficiale di riferimento per la Fisioterapia Internistica incluso nella quota di iscrizione.</p>
+          <h3>Destinatari e Requisiti</h3>
+          <p style="margin-bottom: 1rem;">Accreditato per <strong>Fisioterapisti, Medici</strong> e tutte le Professioni Sanitarie che collaborano nella gestione del paziente cronico e complesso (Infermieri, TNPEE, Terapisti Occupazionali, Logopedisti, Ostetriche/i).</p>
+          <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Prerequisiti:</strong> Nessuno. Il corso è introduttivo e autoconclusivo.</p>
         </div>
       </div>
     </section>
 
+    <!-- BLOG & APPROFONDIMENTI DA DECAP CMS -->
+    <section id="approfondimenti">
+      <h2 class="section-title">Approfondimenti dal CMS</h2>
+      <p class="section-subtitle">Articoli e materiale integrativo aggiornato dal docente</p>
+      <div id="blog-posts-container">
+        <p style="text-align:center; color: var(--text-muted);">Caricamento contenuti in corso...</p>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION & PRICING -->
     <div class="cta-box">
-      <h2>Iscriviti alla Masterclass</h2>
-      <p style="margin-bottom: 1.5rem;">I posti sono limitati per garantire un'alta qualità dell'interazione didattica.</p>
-      <a href="mailto:info@med34.it?subject=Richiesta%20Iscrizione%20Masterclass%20Fisioterapia%20Internistica" class="btn">Richiedi Informazioni / Iscriviti</a>
+      <h2 style="font-family: var(--font-title); font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Iscriviti alla Masterclass</h2>
+      <p style="color: var(--text-muted);">Sede: Spazio Pin — Viale Sondrio 5, Milano | Data: 21 Novembre 2026</p>
+
+      <div class="price-container">
+        <span class="price-old">€ 182,00</span>
+        <span class="price-new">€ 132,00</span>
+        <span class="price-note">Tariffa Early Bird valida fino al 10/10/2026</span>
+      </div>
+
+      <a href="mailto:info@med34.it?subject=Richiesta%20Iscrizione%20Masterclass%20Fisioterapia%20Internistica" class="btn-gold">Richiedi Scheda di Iscrizione</a>
     </div>
+
   </main>
 
+  <!-- FOOTER LOGISTICA & ECM -->
   <footer>
-    <p>&copy; 2026 med34 Services - Provider F&S s.r.l. (ID 225795) | <a href="/admin/">Area Riservata (CMS)</a></p>
+    <div class="container">
+      <p style="margin-bottom: 0.5rem;"><strong>ID Corso ECM:</strong> 225795 | <strong>ID Provider ECM:</strong> 7103 (F&S s.r.l.) | <strong>Crediti:</strong> 12,2</p>
+      <p>&copy; 2026 med34 Services — In collaborazione con l'<em>Istituto Geriatrico Carlo Louisa Grassi ONLUS</em> | <a href="/admin/">Area Riservata (CMS)</a></p>
+    </div>
   </footer>
 
+  <!-- SCRIPT INTEGRATO PER CARICAMENTO DINAMICO DECAP CMS (MARKED.JS) -->
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -113,49 +319,45 @@
       });
     }
 
-    // Il CMS a volte salva i simboli Markdown con l'escape (es. "\### Titolo"): li ripristiniamo
-    // prima di passare il testo a Marked, altrimenti verrebbero mostrati come testo grezzo.
-    function unescapeMarkdown(markdown) {
-      return markdown.replace(/\\([#*_\-`>~+.!\[\]()])/g, '$1');
-    }
-
-    function renderPost(post) {
-      const date = post.date ? new Date(post.date).toLocaleDateString('it-IT') : '';
-      const bodyHTML = marked.parse(unescapeMarkdown(post.body || ''));
-
-      return `
-        <article class="blog-card">
-          <h3 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 0.5rem;">${post.title || 'Approfondimento'}</h3>
-          ${date ? `<span class="blog-date">Pubblicato il ${date}</span>` : ''}
-          ${post.description ? `<p style="margin-bottom: 1.2rem; font-weight: 600; color: #333;">${post.description}</p>` : ''}
-          <div class="blog-body" style="border-top: 1px solid #f0f0f0; padding-top: 1rem; line-height: 1.7;">
-            ${bodyHTML}
-          </div>
-        </article>
-      `;
-    }
-
     async function loadBlogPosts() {
       const container = document.getElementById('blog-posts-container');
       try {
-        const response = await fetch('/api/blog-posts');
-
+        const filename = "2026-09-25-programma-e-abstract-masterclass-fisioterapia-internistica.md";
+        const response = await fetch(`/blog/${filename}`);
+        
         if (!response.ok) {
-          container.innerHTML = '<p>Impossibile caricare gli approfondimenti al momento.</p>';
+          container.innerHTML = '<p style="text-align:center; color: var(--text-muted);">Nessun approfondimento integrativo al momento.</p>';
           return;
         }
 
-        const posts = await response.json();
+        const text = await response.text();
+        
+        const titleMatch = text.match(/title:\s*"(.*?)"/);
+        const dateMatch = text.match(/date:\s*(.*)/);
+        const descMatch = text.match(/description:\s*"(.*?)"/);
+        
+        const bodyMarkdown = text.replace(/---[\s\S]*?---/, '').trim();
+        
+        // Render con Marked.js
+        const bodyHTML = marked.parse(bodyMarkdown);
+        
+        const title = titleMatch ? titleMatch[1] : 'Approfondimento';
+        const date = dateMatch ? new Date(dateMatch[1]).toLocaleDateString('it-IT') : '';
+        const desc = descMatch ? descMatch[1] : '';
 
-        if (!posts.length) {
-          container.innerHTML = '<p>Nessun approfondimento pubblicato al momento.</p>';
-          return;
-        }
-
-        container.innerHTML = posts.map(renderPost).join('');
+        container.innerHTML = `
+          <article class="blog-card">
+            <h3 style="font-size: 1.4rem; color: var(--accent-gold); margin-bottom: 0.5rem;">${title}</h3>
+            ${date ? `<span style="font-size: 0.85rem; color: var(--text-muted); display:block; margin-bottom: 0.8rem;">Pubblicato il ${date}</span>` : ''}
+            ${desc ? `<p style="margin-bottom: 1.2rem; font-weight: 600; color: #fff;">${desc}</p>` : ''}
+            <div class="blog-body" style="border-top: 1px solid var(--border-color); padding-top: 1rem; line-height: 1.7;">
+              ${bodyHTML}
+            </div>
+          </article>
+        `;
       } catch (err) {
         console.error(err);
-        container.innerHTML = '<p>Impossibile caricare gli approfondimenti al momento.</p>';
+        container.innerHTML = '<p style="text-align:center; color: var(--text-muted);">Impossibile caricare gli approfondimenti al momento.</p>';
       }
     }
 

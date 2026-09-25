@@ -1,0 +1,5 @@
+[functions]
+  directory = "netlify/functions"
+
+  # Bundles the blog Markdown files so the blog-posts function can read them at runtime.
+  included_files = ["blog/*.md"]

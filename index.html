@@ -30,12 +30,20 @@
     .card { background: var(--light); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary); }
     .card h3 { color: var(--primary); margin-bottom: 0.5rem; }
     .blog-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .blog-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    .blog-date { font-size: 0.85rem; color: var(--gray); margin-bottom: 0.8rem; display: block; }
+    .blog-body h3 { color: var(--secondary); font-size: 1.25rem; margin: 1.5rem 0 0.5rem 0; font-weight: bold; }
+    .blog-body p { margin-bottom: 1rem; }
+    .blog-body ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+    .blog-body hr { border: 0; height: 1px; background: #e0e0e0; margin: 1.5rem 0; }
     .cta-box { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: #fff; text-align: center; padding: 2.5rem; border-radius: 12px; margin: 3rem 0; }
     .btn { display: inline-block; background: var(--accent); color: #fff; padding: 0.9rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
     footer { background: var(--dark); color: #aaa; padding: 2rem 1.5rem; font-size: 0.85rem; text-align: center; }
     footer a { color: #fff; text-decoration: underline; }
   </style>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Libreria che converte i simboli Markdown in HTML grafico -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
@@ -94,5 +102,59 @@
     <p>&copy; 2026 med34 Services - Provider F&S s.r.l. (ID 225795) | <a href="/admin/">Area Riservata (CMS)</a></p>
   </footer>
 
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+
+    async function loadBlogPosts() {
+      const container = document.getElementById('blog-posts-container');
+      try {
+        const filename = "2026-09-25-programma-e-abstract-masterclass-fisioterapia-internistica.md";
+        const response = await fetch(`/blog/${filename}`);
+        
+        if (!response.ok) {
+          container.innerHTML = '<p>Nessun approfondimento pubblicato al momento.</p>';
+          return;
+        }
+
+        const text = await response.text();
+        
+        const titleMatch = text.match(/title:\s*"(.*?)"/);
+        const dateMatch = text.match(/date:\s*(.*)/);
+        const descMatch = text.match(/description:\s*"(.*?)"/);
+        
+        // Estrae il testo e lo converte da Markdown ad HTML pulito
+        const bodyMarkdown = text.replace(/---[\s\S]*?---/, '').trim();
+        const bodyHTML = marked.parse(bodyMarkdown);
+        
+        const title = titleMatch ? titleMatch[1] : 'Approfondimento';
+        const date = dateMatch ? new Date(dateMatch[1]).toLocaleDateString('it-IT') : '';
+        const desc = descMatch ? descMatch[1] : '';
+
+        container.innerHTML = `
+          <article class="blog-card">
+            <h3 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 0.5rem;">${title}</h3>
+            ${date ? `<span class="blog-date">Pubblicato il ${date}</span>` : ''}
+            ${desc ? `<p style="margin-bottom: 1.2rem; font-weight: 600; color: #333;">${desc}</p>` : ''}
+            <div class="blog-body" style="border-top: 1px solid #f0f0f0; padding-top: 1rem; line-height: 1.7;">
+              ${bodyHTML}
+            </div>
+          </article>
+        `;
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = '<p>Impossibile caricare gli approfondimenti al momento.</p>';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadBlogPosts);
+  </script>
 </body>
 </html>

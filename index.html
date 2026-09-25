@@ -30,9 +30,9 @@
     .card { background: var(--light); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary); }
     .card h3 { color: var(--primary); margin-bottom: 0.5rem; }
     .blog-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    .blog-card h3 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.3rem; }
+    .blog-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
     .blog-date { font-size: 0.85rem; color: var(--gray); margin-bottom: 0.8rem; display: block; }
-    .blog-body h3 { color: var(--secondary); font-size: 1.1rem; margin: 1.2rem 0 0.5rem 0; }
+    .blog-body h3 { color: var(--secondary); font-size: 1.2rem; margin: 1.5rem 0 0.5rem 0; font-weight: bold; }
     .blog-body ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
     .blog-body hr { border: 0; height: 1px; background: #e0e0e0; margin: 1.5rem 0; }
     ul { list-style-position: inside; margin-left: 0.5rem; }
@@ -127,7 +127,6 @@
     async function loadBlogPosts() {
       const container = document.getElementById('blog-posts-container');
       try {
-        // Recuperiamo direttamente l'articolo salvato via Netlify
         const filename = "2026-09-25-programma-e-abstract-masterclass-fisioterapia-internistica.md";
         const response = await fetch(`/blog/${filename}`);
         
@@ -151,10 +150,10 @@
 
         container.innerHTML = `
           <article class="blog-card">
-            <h3>${title}</h3>
+            <h3 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 0.5rem;">${title}</h3>
             ${date ? `<span class="blog-date">Pubblicato il ${date}</span>` : ''}
-            ${desc ? `<p style="margin-bottom: 1.2rem; font-weight: 500; color: #424242;">${desc}</p>` : ''}
-            <div class="blog-body" style="border-top: 1px solid #f0f0f0; padding-top: 1rem;">
+            ${desc ? `<p style="margin-bottom: 1.2rem; font-weight: 500; color: #333;">${desc}</p>` : ''}
+            <div class="blog-body" style="border-top: 1px solid #f0f0f0; padding-top: 1rem; line-height: 1.7;">
               ${bodyHTML}
             </div>
           </article>

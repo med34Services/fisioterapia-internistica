@@ -224,7 +224,7 @@
       <p class="section-subtitle">Autore del Modello C.L.I.N.I.C.O.</p>
 
       <div class="card docente-box">
-        <img src="https://raw.githubusercontent.com/med34Services/fisioterapia-internistica/main/Nicola%20Dacomo%202026%20definitiva.png" alt="Nicola Dacomo" class="docente-img">
+        <img src="./Nicola%20Dacomo%202026%20definitiva.png" alt="Nicola Dacomo" class="docente-img">
         <div class="docente-info">
           <h3>Nicola Dacomo</h3>
           <p class="docente-role">Fisioterapista, Terapista della Riabilitazione, Consulente Tecnico Scientifico per Dispositivi Medici</p>
@@ -299,7 +299,8 @@
       const container = document.getElementById('blog-posts-container');
       try {
         const filename = "2026-09-25-programma-e-abstract-masterclass-fisioterapia-internistica.md";
-        const response = await fetch(`/blog/${filename}`);
+        // Uso percorso relativo per compatibilità con GitHub Pages
+        const response = await fetch(`./blog/${filename}`);
         
         if (!response.ok) {
           container.innerHTML = '<p style="text-align:center; color: var(--text-muted);">Nessun approfondimento integrativo al momento.</p>';
@@ -335,6 +336,11 @@
         container.innerHTML = '<p style="text-align:center; color: var(--text-muted);">Impossibile caricare gli approfondimenti al momento.</p>';
       }
     }
+
+    document.addEventListener('DOMContentLoaded', loadBlogPosts);
+  </script>
+</body>
+</html>
 
     document.addEventListener('DOMContentLoaded', loadBlogPosts);
   </script>

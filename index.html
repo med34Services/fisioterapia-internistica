@@ -6,7 +6,6 @@
   <title>Masterclass Fisioterapia Internistica - 21 Novembre 2026 Milano</title>
   <meta name="description" content="Corso Introduttivo in Fisioterapia Internistica: Valutazione, ragionamento clinico e gestione delle disfunzioni internistiche nei quadri clinici complessi. 12.2 Crediti ECM.">
   
-  <!-- Font Google per stile Dark Luxury High-Tech -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,10 +28,8 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: var(--font-body); color: var(--text-main); background-color: var(--bg-dark); line-height: 1.7; overflow-x: hidden; }
 
-    /* Layout & Container */
     .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
 
-    /* Hero Section */
     header.hero {
       position: relative;
       background: radial-gradient(circle at 50% 20%, #172433 0%, var(--bg-dark) 70%);
@@ -44,21 +41,16 @@
     .hero h1 { font-family: var(--font-title); font-size: 2.8rem; color: #fff; letter-spacing: 1px; margin-bottom: 0.8rem; line-height: 1.2; }
     .hero-tagline { font-size: 1.25rem; font-style: italic; color: var(--accent-gold-light); margin-bottom: 2rem; opacity: 0.9; }
 
-    /* Badges Bar */
     .badge-container { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 2rem; }
     .badge { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); padding: 0.5rem 1rem; border-radius: 30px; font-size: 0.85rem; font-weight: 500; color: #fff; }
     .badge-ecm { background: linear-gradient(135deg, #b8860b, #d4af37); color: #000; font-weight: 700; border: none; }
 
-    /* Sections General */
     section { padding: 4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
     .section-title { font-family: var(--font-title); font-size: 1.8rem; color: #fff; margin-bottom: 0.5rem; text-align: center; }
     .section-subtitle { text-align: center; color: var(--accent-gold); font-size: 0.95rem; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 1.5px; }
 
-    /* Grid Layouts */
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
 
-    /* Cards */
     .card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -69,7 +61,6 @@
     .card:hover { background: var(--bg-card-hover); border-color: var(--accent-gold); transform: translateY(-3px); }
     .card h3 { color: var(--accent-gold); margin-bottom: 1rem; font-size: 1.25rem; }
 
-    /* Program Section (Locandina Style) */
     .program-list { display: flex; flex-direction: column; gap: 1.5rem; }
     .program-item {
       display: grid;
@@ -91,19 +82,16 @@
     .mod-time { color: var(--accent-cyan); font-size: 0.85rem; font-weight: 600; text-align: right; }
     @media (max-width: 768px) { .mod-time { text-align: left; } }
 
-    /* Docente Section */
     .docente-box { display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: center; }
     @media (max-width: 768px) { .docente-box { grid-template-columns: 1fr; text-align: center; } }
     .docente-img { width: 100%; border-radius: 12px; border: 2px solid var(--accent-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: cover; }
     .docente-info h3 { font-size: 1.6rem; color: #fff; margin-bottom: 0.3rem; }
     .docente-role { color: var(--accent-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 1rem; }
 
-    /* Feature List */
     .feature-list { list-style: none; }
     .feature-list li { position: relative; padding-left: 1.8rem; margin-bottom: 0.8rem; color: var(--text-main); }
     .feature-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-gold); font-weight: bold; }
 
-    /* Pricing & Call to Action Box */
     .cta-box {
       background: linear-gradient(135deg, #16222f 0%, #0d151e 100%);
       border: 2px solid var(--accent-gold);
@@ -134,23 +122,19 @@
     }
     .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5); }
 
-    /* Decap CMS Render Section */
     .blog-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
     .blog-body h3 { color: var(--accent-gold); margin: 1.5rem 0 0.5rem 0; }
     .blog-body ul { margin-left: 1.5rem; margin-bottom: 1rem; }
 
-    /* Footer */
     footer { background: #05070a; padding: 2.5rem 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
     footer a { color: var(--accent-gold); text-decoration: none; }
   </style>
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <!-- Parser Marked.js -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
-  <!-- HERO SECTION -->
   <header class="hero">
     <div class="container">
       <p class="hero-subtitle">Corso ECM Introduttivo — Un percorso per una nuova visione</p>
@@ -168,7 +152,6 @@
 
   <main class="container">
 
-    <!-- PRESENTAZIONE & OBIETTIVI -->
     <section>
       <h2 class="section-title">Presentazione del Corso</h2>
       <p class="section-subtitle">Oltre il sintomo muscoloscheletrico: l'approccio sistemico</p>
@@ -193,7 +176,6 @@
       </div>
     </section>
 
-    <!-- PROGRAMMA DIDATTICO (LOCANDINA STYLE) -->
     <section>
       <h2 class="section-title">Programma Didattico</h2>
       <p class="section-subtitle">Struttura della giornata residenziale a Milano</p>
@@ -237,7 +219,6 @@
       </div>
     </section>
 
-    <!-- DOCENTE -->
     <section>
       <h2 class="section-title">Docente del Corso</h2>
       <p class="section-subtitle">Autore del Modello C.L.I.N.I.C.O.</p>
@@ -253,7 +234,6 @@
       </div>
     </section>
 
-    <!-- MATERIALE INCLUSO E DESTINATARI -->
     <section>
       <div class="grid-2">
         <div class="card">
@@ -274,7 +254,6 @@
       </div>
     </section>
 
-    <!-- BLOG & APPROFONDIMENTI DA DECAP CMS -->
     <section id="approfondimenti">
       <h2 class="section-title">Approfondimenti dal CMS</h2>
       <p class="section-subtitle">Articoli e materiale integrativo aggiornato dal docente</p>
@@ -283,7 +262,6 @@
       </div>
     </section>
 
-    <!-- CALL TO ACTION & PRICING -->
     <div class="cta-box">
       <h2 style="font-family: var(--font-title); font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Iscriviti alla Masterclass</h2>
       <p style="color: var(--text-muted);">Sede: Spazio Pin — Viale Sondrio 5, Milano | Data: 21 Novembre 2026</p>
@@ -299,7 +277,6 @@
 
   </main>
 
-  <!-- FOOTER LOGISTICA & ECM -->
   <footer>
     <div class="container">
       <p style="margin-bottom: 0.5rem;"><strong>ID Corso ECM:</strong> 225795 | <strong>ID Provider ECM:</strong> 7103 (F&S s.r.l.) | <strong>Crediti:</strong> 12,2</p>
@@ -307,7 +284,6 @@
     </div>
   </footer>
 
-  <!-- SCRIPT INTEGRATO PER CARICAMENTO DINAMICO DECAP CMS (MARKED.JS) -->
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -338,7 +314,6 @@
         
         const bodyMarkdown = text.replace(/---[\s\S]*?---/, '').trim();
         
-        // Render con Marked.js
         const bodyHTML = marked.parse(bodyMarkdown);
         
         const title = titleMatch ? titleMatch[1] : 'Approfondimento';
